@@ -1,8 +1,8 @@
 {
   "name": "griffinwebserver_v2-middleware-bodyparser",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "bodyparser middleware for griffinwebserver_v2",
+  "main": "griffinwebserver_v2-middleware-bodyparser.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
