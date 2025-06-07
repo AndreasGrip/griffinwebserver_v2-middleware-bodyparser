@@ -45,7 +45,6 @@ function middlewareBodyParser(req, res) {
           } else if (Array.isArray(bodyData) && bodyData.every(e => typeof e === 'number')) {
             // this is what happens when data is JSON.stringified 
             req.body = Buffer.from(bodyData).toString();
-          }
           } else {
             req.body = bodyData;
           }
