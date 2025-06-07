@@ -19,5 +19,4 @@ More formats will be converted to text in the future, please make sure it's a bu
 
 const newString = Buffer.isBuffer(bodyData) ? Buffer.from(bodyData).toString() : bodyData;
 
-
 Buffers are binary data, and to handle for instance upload of files you need to read up on Buffers
