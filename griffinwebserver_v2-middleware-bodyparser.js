@@ -25,12 +25,12 @@ function parseFormData(string) {
 function middlewareBodyParser(req, res) {
   const bodyData = [];
   return new Promise((resolve, reject) => {
-    // get all chungs of data and add them
+    // get all chunks of data and add them
     req.on('data', (chunk) => {
       bodyData.push(...chunk);
     });
 
-    // once all chunks of data are recived
+    // once all chunks of data are received
     req.on('end', () => {
       // Check if we got any data, otherwise just continue
       if (bodyData.length === 0) resolve();
