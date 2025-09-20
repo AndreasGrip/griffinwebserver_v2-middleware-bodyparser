@@ -51,7 +51,8 @@ function middlewareBodyParser(req, res) {
         }
 
         // convert JSON into a object
-        if (req.headers['content-type'] === 'application/json') {
+        // apperently some people for no reason add encoding like UTF 8 in content type
+        if (req.headers['content-type'] && req.headers['content-type'].split(';')[0] === 'application/json') {
           if (typeof req.body === 'string' && isJSON(req.body)) {
             req.body = JSON.parse(req.body);
             resolve();
@@ -63,7 +64,7 @@ function middlewareBodyParser(req, res) {
         }
 
         // convert form data into a object
-        if (req.headers['content-type'] === 'application/x-www-form-urlencoded') {
+        if (req.headers['content-type'] && req.headers['content-type'].split(';')[0] === 'application/x-www-form-urlencoded') {
           if (typeof req.body === 'string') {
             const formData = parseFormData(req.body);
             if (formData instanceof Error) {
