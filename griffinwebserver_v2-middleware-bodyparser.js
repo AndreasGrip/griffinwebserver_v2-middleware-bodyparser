@@ -39,7 +39,7 @@ function middlewareBodyParser(req, res) {
       // if so, convert it to text.
       const contentType = req.headers['content-type'];
       if (contentType) {
-        if (/text\//.test(contentType) || textMimes.includes(contentType)) {
+        if (/text\//.test(contentType) || textMimes.includes(contentType.split(';')[0])) {
           if(Buffer.isBuffer(bodyData)) {
             req.body = Buffer.from(bodyData).toString();
           } else if (Array.isArray(bodyData) && bodyData.every(e => typeof e === 'number')) {

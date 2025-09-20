@@ -1,6 +1,6 @@
 {
   "name": "griffinwebserver_v2-middleware-bodyparser",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "bodyparser middleware for griffinwebserver_v2",
   "main": "griffinwebserver_v2-middleware-bodyparser.js",
   "scripts": {
